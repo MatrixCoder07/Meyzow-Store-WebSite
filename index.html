@@ -621,18 +621,6 @@ document.addEventListener("keydown", function(e){
   // Cmd+Option+I on Mac
   if (e.metaKey && e.altKey && ["I","i"].includes(e.key)) { e.preventDefault(); return; }
 });
-// Devtools detection — blur/disable if opened
-(function detectDevtools(){
-  const threshold = 160;
-  setInterval(function(){
-    if (
-      window.outerWidth - window.innerWidth > threshold ||
-      window.outerHeight - window.innerHeight > threshold
-    ) {
-      document.body.innerHTML = '<div style="display:flex;align-items:center;justify-content:center;height:100vh;font-family:sans-serif;color:#fff;background:#08090E;font-size:18px">🔒 Доступ закрыт</div>';
-    }
-  }, 1000);
-})();
 
 </script>
 </body>
